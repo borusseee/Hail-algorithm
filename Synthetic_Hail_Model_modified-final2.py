@@ -7,10 +7,10 @@
 #!/usr/bin/env python
 '''
     File name: SyntheticHailModel.py
-    Author: Andreas Prein
-    E-mail: prein@ucar.edu
+    Author: Boris Blanc
+    E-mail: boris.blanc@env.ethz.ch
     Date created: 24.08.2017
-    Date last modified: 24.08.2017
+    Date last modified: 30.07.2023
 
     ##############################################################
     Purpos:
