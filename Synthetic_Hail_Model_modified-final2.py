@@ -186,10 +186,9 @@ setup_string = 'search-rad-'+str(iRadius)+'_qT-'+str(qT)+'_qD-'+str(qD)
 
 
 #-----------------------------------------------------------------------
-# Read the observations from NOAA, BoM & ESSL 
+# Read the observations from NOAA
 #-----------------------------------------------------------------------
 
-# start with NOAA
 sSaveFolder="/glade/work/bblanc/HailObs/SPC_data/ncdf_files/"
 sDataSet = 'NOAA'
 
@@ -226,74 +225,6 @@ for yy in range(len(iYears)):
         
 monthly_NOAAobs=np.mean(daily_NOAAobs, axis=0)
 yearly_NOAAobs=np.sum(daily_NOAAobs, axis=1)
-
-# # Same with BoM
-# sSaveFolder="/glade/work/bblanc/HailObs/BoM/HailReports-ERA5/ERA5-gridded/"
-# sDataSet = 'BoM'
-
-
-# #RawData = None
-
-# hailsize = ['Hail', 'HailSize']
-# rgrBoMObs=np.zeros((2, len(rgdTimeDD), 160, 200))
-
-# for ii in range(len(hailsize)):
-#     dd=0
-#     for yy in range(len(iYears)):
-#         #print('Loadind BoM data')
-#         sFileName=sSaveFolder+'BoM-Hail-StormReports_gridded-75km_'+str(iYears[yy])+'.nc'
-
-#         # read in the variables
-#         ncid=Dataset(sFileName, mode='r')
-
-#         rgrLatGrid=np.squeeze(ncid.variables['lat'][:,0])
-#         rgrLonGrid=np.squeeze(ncid.variables['lon'][0,:])
-#         rgrLonBoM=np.asarray(([rgrLonGrid,]*rgrLatGrid.shape[0]))
-#         rgrLatBoM=np.asarray(([rgrLatGrid,]*rgrLonGrid.shape[0])).transpose()
-#         yearlength=365 + calendar.isleap(iYears[yy])
-        
-#         rgrBoMObs[ii,dd:dd+yearlength,:,:]=np.squeeze(ncid.variables[hailsize[ii]][:])
-#         dd=dd+yearlength
-#         ncid.close()
-
-# #Get monthly and yearly hail observations
-# daily_BoMobs = np.zeros((len(iYears), 12, rgrLonBoM.shape[0], rgrLonBoM.shape[1]))
-# for yy in range(len(iYears)):
-#     for mm in range(12):
-#         daily_BoMobs[yy,mm,:,:] = np.sum(rgrBoMObs[0,(rgdTimeDD.year == iYears[yy]) & (rgdTimeDD.month == (mm+1)),:,:], axis=0)
-        
-# monthly_BoMobs=np.mean(daily_BoMobs, axis=0)
-# yearly_BoMobs=np.sum(daily_BoMobs, axis=1)
-
-
-# # Same with ESSL
-# sSaveFolder="/glade/work/bblanc/HailObs/ESSL/"
-# sDataSet = 'ESSL'
-
-
-# #RawData = None
-
-# hailsize = ['Hail', 'size']
-# rgrESSLObs=np.zeros((2, len(rgdTimeDD), 180, 270))
-
-# for ii in range(len(hailsize)):
-#     dd=0
-#     for yy in range(len(iYears)):
-#         #print('Loadind BoM data')
-#         sFileName=sSaveFolder+'ESSL-Hail-StormReports_gridded-ERA5_'+str(iYears[yy])+'.nc'
-
-#         # read in the variables
-#         ncid=Dataset(sFileName, mode='r')
-
-#         rgrLatGrid=np.squeeze(ncid.variables['lat'][:,0])
-#         rgrLonGrid=np.squeeze(ncid.variables['lon'][0,:])
-#         rgrLonESSL=np.asarray(([rgrLonGrid,]*rgrLatGrid.shape[0]))
-#         rgrLatESSL=np.asarray(([rgrLatGrid,]*rgrLonGrid.shape[0])).transpose()
-#         yearlength=365 + calendar.isleap(iYears[yy])
-        
-#         rgrESSLObs[ii,dd:dd+yearlength,:,:]=np.squeeze(ncid.variables[hailsize[ii]][:])
-#         dd=dd+yearlength
-#         ncid.close()
 
 # #Get monthly and yearly hail observations
 # daily_ESSLobs = np.zeros((len(iYears), 12, rgrLonESSL.shape[0], rgrLonESSL.shape[1]))
