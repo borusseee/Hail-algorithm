@@ -226,15 +226,6 @@ for yy in range(len(iYears)):
 monthly_NOAAobs=np.mean(daily_NOAAobs, axis=0)
 yearly_NOAAobs=np.sum(daily_NOAAobs, axis=1)
 
-# #Get monthly and yearly hail observations
-# daily_ESSLobs = np.zeros((len(iYears), 12, rgrLonESSL.shape[0], rgrLonESSL.shape[1]))
-# for yy in range(len(iYears)):
-#     for mm in range(12):
-#         daily_ESSLobs[yy,mm,:,:] = np.sum(rgrESSLObs[0,(rgdTimeDD.year == iYears[yy]) & (rgdTimeDD.month == (mm+1)),:,:], axis=0)
-        
-# monthly_ESSLobs=np.mean(daily_ESSLobs, axis=0)
-# yearly_ESSLobs=np.sum(daily_ESSLobs, axis=1)
-
 #------------------------------------------------#
 # Save Latitude, Longitude and Height in arrays
 #------------------------------------------------#
