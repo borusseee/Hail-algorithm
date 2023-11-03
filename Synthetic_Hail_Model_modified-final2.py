@@ -1,10 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
-
-
-#!/usr/bin/env python
 '''
     File name: SyntheticHailModel.py
     Author: Boris Blanc
@@ -142,7 +138,6 @@ iMonths=np.unique(rgdTimeDD.month)
 iYears=np.unique(rgdTimeDD.year)
 
 rgsLableABC=string.ascii_lowercase+string.ascii_uppercase
-PlotDir='/glade/u/home/bblanc/parameter_testing/plots/plots_final'
 
 sSaveDataDir='/glade/scratch/bblanc/ERA5_hail_model/Hail_Probabilities_final/'
 
