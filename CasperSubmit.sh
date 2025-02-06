@@ -13,8 +13,6 @@
 #PBS -j oe
 
 
-# to check process:  qstat -u $USER
-
 # module load python/2.7.14
 module unload python
 module load conda
